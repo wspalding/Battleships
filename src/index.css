@@ -1,0 +1,205 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    overflow: auto;
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+}
+
+.title {
+  margin-top: -50px;
+  text-align: center;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.options {
+  margin: auto;
+  text-align: center;
+}
+
+.header_img {
+  margin: auto;
+  display: block;
+  width: auto;
+  height: 200px;
+  margin-top: -50px;
+}
+
+.phase {
+  text-align: center;
+  margin: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.player_options {
+  margin: auto;
+}
+
+.game_display {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.board table, th, td {
+  border: solid black 1px;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+.topBoard {
+  margin: auto;
+}
+
+.botBoard {
+  margin: auto;
+}
+
+.top_board_table_body{
+  table-layout: fixed;
+  /* width: 100%; */
+  min-width: 240px;
+  background-repeat: no-repeat;
+  background-size: 100%, 100%;
+  background-image: url("/imgs/radar.gif");
+
+}
+
+.bot_board_table_body {
+  table-layout: fixed;
+  /* width: 100%; */
+  min-width: 240px;
+  background-repeat: no-repeat;
+  background-size: auto, 100%;
+  background-image: url("/imgs/water-texture.jpg");
+}
+
+.botBoard_table_cell {
+  text-align: center;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.topBoard_table_cell {
+  text-align: center;
+  color: white;
+  opacity: 0.8;
+  height: 30px;
+  width: 30px;
+}
+
+
+
+.hist_col {
+
+}
+
+.board_col {
+  margin: auto;
+  /* border: solid black 1px; */
+}
+
+.history {
+  float: right;
+  height:600px;
+  width:100%;
+  /* border:1px solid #ccc; */
+  font:16px/26px Georgia, Garamond, Serif;
+  overflow:auto;
+  text-align: right;
+}
+
+.history_message {
+  border: solid black 1px;
+}
+
+.top_hit {
+  color: red;
+}
+
+.top_miss {
+  color: white;
+}
+
+.square {
+  border: none;
+  outline: none;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  float: left;
+  background-color: black;
+}
+
+.empty_square {
+  background-color: Transparent;
+  /* border: none;
+  outline: none;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  float: left; */
+}
+
+.miss {
+  background-color: Transparent;
+  /* border: none;
+  outline: none;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  float: left; */
+}
+
+.hit {
+  background-color: grey;
+  /* border: none;
+  outline: none;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  float: left; */
+}
+
+.ship {
+  background-color: grey;
+  /* border: none;
+  outline: none;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  float: left; */
+}
+
+.selected {
+  background-color: green;
+  /* border: none;
+  outline: none;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  float: left; */
+}
+
+.highlighted {
+  background-color: rgba(0,255,0,0.5);
+  /* border: none;
+  outline: none;
+  width: 29px;
+  height: 29px;
+  padding: 0;
+  float: left; */
+}
+
+.button_img {
+  height: 28px;
+  width: 28px;
+}

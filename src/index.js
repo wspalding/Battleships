@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-const game = require('./game.js');
+const game = require('./utils/game.js');
+const player = require('./utils/player.js');
 
 class ViewController extends React.Component
 {
@@ -55,8 +56,8 @@ class ViewController extends React.Component
     // var player2 = "p2"
     var n1 = (this.state.p1name === "") ? "player 1" : this.state.p1name
     var n2 = (this.state.p2name === "") ? "player 2" : this.state.p2name
-    var player1 = (this.state.p1type === "human") ? new game.Human(n1) : new game.Computer(n1);
-    var player2 = (this.state.p2type === "human") ? new game.Human(n2) : new game.Computer(n2);
+    var player1 = (this.state.p1type === "human") ? new player.Human(n1) : new player.Computer(n1);
+    var player2 = (this.state.p2type === "human") ? new player.Human(n2) : new player.Computer(n2);
     this.setState({
       game: new game.BattleShips(player1, player2),
       gameOver: false,

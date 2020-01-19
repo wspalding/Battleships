@@ -63,4 +63,4 @@ class Ship
 
 
 
-exports.Ship = Ship
+module.exports.Ship = Ship

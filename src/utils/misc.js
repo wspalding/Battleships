@@ -10,4 +10,5 @@ function makeArray(w, h, val)
   return arr;
 }
 
-exports.makeArray = makeArray
+export default makeArray;
+// exports.makeArray = makeArray

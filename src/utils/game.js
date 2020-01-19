@@ -1,5 +1,7 @@
-const player = require('./player.js');
-const misc = require('./misc.js');
+// const player = require('./player.js');
+import Player from './player.js';
+// const misc = require('./misc.js');
+import makeArray from './misc.js';
 
 
 class BattleShips
@@ -164,7 +166,7 @@ class Board
   constructor(size)
   {
     this.size = size
-    this.squares = misc.makeArray(size, size, 0)
+    this.squares = makeArray(size, size, 0)
     this.placedShips = []
   }
 
@@ -272,6 +274,6 @@ class Board
 }
 
 
-exports.BattleShips = BattleShips
+export default BattleShips;
 // exports.Human = Human
 // exports.Computer = Computer

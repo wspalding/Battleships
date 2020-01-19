@@ -1,5 +1,7 @@
-const ship = require('./ship.js');
-const misc = require('./misc.js');
+// const ship = require('./ship.js');
+import Ship from './ship.js';
+// const misc = require('./misc.js');
+import makeArray from './misc.js';
 
 class Player
 {
@@ -7,7 +9,7 @@ class Player
   {
     this.name = name
     this.isTurn = false
-    this.unplaced_ships = [new ship.Ship(2),new ship.Ship(3),new ship.Ship(4),new ship.Ship(5)]
+    this.unplaced_ships = [new Ship(2),new Ship(3),new Ship(4),new Ship(5)]
     this.attacked_squares = []
     this.ships = []
     this.board = null
@@ -78,7 +80,7 @@ class Player
 
   getHitBoard(enemyBoard)
   {
-    var b = misc.makeArray(this.board.size, this.board.size, 0)
+    var b = makeArray(this.board.size, this.board.size, 0)
     for(var i = 0; i < this.attacked_squares.length; i++)
     {
       var j = this.attacked_squares[i]
@@ -190,64 +192,10 @@ class Player
   }
 }
 
-class Human extends Player
-{
-  constructor(name)
-  {
-    super(name)
-  }
-}
-
-class Computer extends Player
-{
-  constructor(name)
-  {
-    super(name)
-  }
-
-  autoMove(game)
-  {
-    switch (game.getCurrentPhase())
-    {
-      case "setup":
-        console.log("CP setup");
-        while(this.unplaced_ships.length > 0)
-        {
-          var x = Math.round(Math.random() * (this.board.size - 1))
-          var y = Math.round(Math.random() * (this.board.size - 1))
-          this.boardPressed(x,y)
-          var currShip = this.unplaced_ships[this.unplaced_ships.length - 1]
-          var valid_points = this.board.getValidPlacements(currShip, x, y)
-          if(valid_points.length > 0)
-          {
-            var choice = Math.round(Math.random() * (valid_points.length - 1))
-
-            this.boardPressed(...valid_points[choice])
-          }
-        }
-        game.swapTurns()
-        break;
-      case "attacking":
-        var x, y;
-        do
-        {
-          x = Math.round(Math.random() * (this.board.size - 1))
-          y = Math.round(Math.random() * (this.board.size - 1))
-        } while(this.alreadyAttacked(x,y))
-
-        game.attack(x,y)
-        // console.log(this.name + " attacking");
-        break
-      case "game over":
-        // console.log("CP gameOver");
-        break
-      default:
-
-    }
-  }
-}
 
 
 
-exports.Human = Human
-exports.Computer = Computer
+
+export default Player
+// exports.Human = Human
+// exports.Computer = Computer

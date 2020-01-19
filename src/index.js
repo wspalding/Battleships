@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-const game = require('./utils/game.js');
-const player = require('./utils/player.js');
+// const game = require('./utils/game.js');
+import BattleShips from './utils/game.js'
+// const player = require('./utils/player.js');
+import Human from './utils/human.js';
+import Computer from './utils/computer.js';
 
 class ViewController extends React.Component
 {
@@ -56,10 +59,10 @@ class ViewController extends React.Component
     // var player2 = "p2"
     var n1 = (this.state.p1name === "") ? "player 1" : this.state.p1name
     var n2 = (this.state.p2name === "") ? "player 2" : this.state.p2name
-    var player1 = (this.state.p1type === "human") ? new player.Human(n1) : new player.Computer(n1);
-    var player2 = (this.state.p2type === "human") ? new player.Human(n2) : new player.Computer(n2);
+    var player1 = (this.state.p1type === "human") ? new Human(n1) : new Computer(n1);
+    var player2 = (this.state.p2type === "human") ? new Human(n2) : new Computer(n2);
     this.setState({
-      game: new game.BattleShips(player1, player2),
+      game: new BattleShips(player1, player2),
       gameOver: false,
     })
     event.preventDefault()
@@ -368,7 +371,7 @@ class Game extends React.Component
   startGame(numPlayers)
   {
     this.setState({
-      game: new game.BattleShips("p1", "p2"),
+      game: new BattleShips("p1", "p2"),
       gameOver: false,
     })
   }

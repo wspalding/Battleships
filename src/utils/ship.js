@@ -63,4 +63,5 @@ class Ship
 
 
 
-module.exports = { Ship: Ship }
+// module.exports = { Ship: Ship }
+export default Ship;
